@@ -13,7 +13,6 @@ const Navbar = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          Chi Chan
         </motion.span>
         <div className="social">
           <a href="#">
