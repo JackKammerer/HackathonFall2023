@@ -1,7 +1,8 @@
-html {
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-  }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
   
   * {
     padding: 0;
@@ -11,7 +12,8 @@ html {
   }
   
   body {
-    background-color: #FF8427;
+    background: linear-gradient(to bottom, #FF8427, black);
+    background-repeat: no-repeat;
     color: white;
   }
   
