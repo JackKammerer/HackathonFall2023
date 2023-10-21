@@ -1,4 +1,4 @@
-@import "../../app.scss";
+@import "../../../app.scss";
 
 .hero {
   height: calc(100vh - 100px);
@@ -55,4 +55,25 @@
     opacity: 0.2;
     bottom: 0;
   }
+}
+
+.redirect-button{
+  background: black;
+  color: white;
+  border-radius: 4px;
+  font-weight: bolder;
+  width: 100px;
+  height: 40px;
+  border: none;
+}
+
+.redirect-button:hover{
+  background-color: green;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.button-container{
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }

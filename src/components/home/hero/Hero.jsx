@@ -17,7 +17,11 @@ const sliderVariants = {
 
 const Hero = () => {
   return (
+    
     <div className="hero">
+        <div className="button-container">
+          <button className="redirect-button">Update Profile</button>
+        </div>
       <div className="wrapper">
         <motion.div
           className="slidingTextContainer"
