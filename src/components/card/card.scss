@@ -1,0 +1,84 @@
+  .card-ex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: 600px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    -webkit-user-drag: none; /* Disable user drag on the card to avoid conflicts with the horizontal drag */
+  }
+  
+  .content-left{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-content {
+    color: black;
+    text-align: left; /* Align the content to the left */
+    display: flex;
+    height: 100px;
+    flex-direction: column; /* Set the flex direction to column to stack elements vertically */
+    justify-content: flex-start; /* Align elements at the top */
+    align-items: flex-start; /* Align elements to the left */
+    flex-grow: 1; /* Allow this element to expand to take available space */
+    overflow: auto;
+    overflow-y: hidden; /* Hide the vertical scrollbar */
+  }
+
+  .card-content h2{
+    margin-bottom: 20px;
+  }
+
+  
+  
+  .name {
+    color: black;
+    text-align: center;
+    padding: 20px;
+    margin-left: 140px;
+    font-size: 40px;
+  }
+
+
+  .image-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 10%;
+    transform: scale(0.3);
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+    margin-top: 20px;
+    margin-bottom: 160px;
+}
+
+.image-container img {
+  border-radius: 20%; /* Match the container's circular shape */
+}  
+
+.contact{
+  color: black;
+  text-align: center;
+  padding: 20px;
+  font-size: 40px;
+}
+  
+.contact-body{
+  color: black;
+  margin-top: 20px;
+  margin-right: 250px;
+}
+
+.contact-body h2{
+  margin-bottom: 40px;
+}
+

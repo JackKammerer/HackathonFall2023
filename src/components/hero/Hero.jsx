@@ -1,37 +1,15 @@
 import "./hero.scss";
 import { motion } from "framer-motion";
 
-const textVariants = {
-  initial: {
-    x: -500,
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      duration: 1,
-      staggerChildren: 0.1,
-    },
-  },
-  scrollButton: {
-    opacity: 0,
-    y: 10,
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-    },
-  },
-};
 const sliderVariants = {
   initial: {
     x: 0,
   },
   animate: {
-    x: "-220%",
+    x: "-320%",
     transition: {
       repeat: Infinity,
-      repeatType:"mirror",
+      repeatType: "mirror",
       duration: 20,
     },
   },
@@ -42,42 +20,18 @@ const Hero = () => {
     <div className="hero">
       <div className="wrapper">
         <motion.div
-          className="textContainer"
-          variants={textVariants}
+          className="slidingTextContainer"
+          variants={sliderVariants}
           initial="initial"
           animate="animate"
+          style={{ color: "rgba(255, 255, 255, 0.5)" }}
         >
-          <motion.h2 variants={textVariants}>Chi Chan</motion.h2>
-          <motion.h1 variants={textVariants}>
-            Aspiring Computer Science Student
-          </motion.h1>
-          <motion.div variants={textVariants} className="buttons">
-            <motion.button variants={textVariants}>
-              See the Latest Works
-            </motion.button>
-            <motion.button variants={textVariants}>Contact Me</motion.button>
-          </motion.div>
-          <motion.img
-            variants={textVariants}
-            animate="scrollButton"
-            src="/scroll.png"
-            alt=""
-          />
+          Find Students Alike
         </motion.div>
-      </div>
-      <motion.div
-        className="slidingTextContainer"
-        variants={sliderVariants}
-        initial="initial"
-        animate="animate"
-      >
-        Student 
-      </motion.div>
-      <div className="imageContainer">
-        <img src="/hero.png" alt="" />
       </div>
     </div>
   );
 };
 
 export default Hero;
+
