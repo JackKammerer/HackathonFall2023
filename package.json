@@ -1,0 +1,22 @@
+{
+  "name": "hackathonfall2023",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JackKammerer/HackathonFall2023.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JackKammerer/HackathonFall2023/issues"
+  },
+  "homepage": "https://github.com/JackKammerer/HackathonFall2023#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
