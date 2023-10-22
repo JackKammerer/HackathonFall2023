@@ -1,18 +1,25 @@
 import React from 'react';
 import Hero from '../components/home/hero/Hero';
 import Card from '../components/home/card/Card';
+import { Link } from 'react-router-dom'; 
+import "./button.scss"
 
-const HomePage = () => {
+function HomePage() {
   return (
     <div className='HomePage'>
       <Hero />
-      <Card />
+      <Card /> 
+      <div className= "button-container">
+        <button>
+          <Link to="/updateprofile">Update Profile</Link>
+        </button>
+      </div> 
     </div>
+
   );
-};
+}
 
-export default HomePage;
-
+export default HomePage
 
 
 

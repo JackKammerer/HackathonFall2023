@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
+import "./button.scss"
 import UI from '../components/updateprofile/UI/ui';
+import { Link } from 'react-router-dom';
 
-const UpdateProfile = () => {
-
-
+function UpdateProfile() {
   return (
     <div> 
-      <UI/>
+      <UI />
+      <div className="button-container">
+        <button>
+          <Link to="/homepage">Home</Link>  
+        </button>
+      </div>
     </div>
   );
-};
+}
 
 export default UpdateProfile;
-
-
 
 
 
