@@ -1,68 +1,71 @@
 import React, { useState } from "react";
-import TinderCard from 'react-tinder-card';
-import './Card.scss'; // Assuming you have a CSS file named Card.css for styles
-
-const initialX = 0; // Set an initial X position
-
+import "./card.scss"; // Import your CSS file
 const Card = () => {
-  const [isFlipped, setFlipped] = useState(false);
-  const [matched, setMatched] = useState([]); // Initialize the matched cards array
-
-  const handleSwipe = (direction) => {
-    if (direction === 'right') {
-      // Swiped right, so flip the card
-      setFlipped(true);
-    } else if (direction === 'left') {
-      // Swiped left, so flip the card and add it to the "matched" array
-      setFlipped(true);
-      // Add card data to the "matched" array
-      setMatched((prevMatched) => [...prevMatched, {/* Add your card data here */}]);
-    }
-  };
-
-  const resetCard = () => {
-    setFlipped(false);
-  };
+  const [cardData, setCardData] = useState([
+    {
+      Name: "John Doe",
+      Year: "Senior",
+      Major: "Computer Science",
+      Classes: ["CSCI 101", "MATH 201", "PHYS 301"],
+      Description: "A passionate computer science student with a love for coding and problem-solving. Let's connect!",
+      Email: "john.doe@example.com",
+      PhoneNumber: "123-456-7890",
+      Discord: "john_doe#1234",
+      Image: "john-doe.jpg",
+    },
+    {
+      Name: "Jane Smith",
+      Year: "Junior",
+      Major: "Engineering",
+      Classes: ["ENGR 201", "MATH 202", "PHYS 302"],
+      Description: "An aspiring engineer who enjoys building things and solving real-world problems. Connect with me to discuss engineering projects!",
+      Email: "jane.smith@example.com",
+      PhoneNumber: "987-654-3210",
+      Discord: "jane_smith#5678",
+      Image: "jane-smith.jpg",
+    },
+    {
+      Name: "Jane Smith",
+      Year: "Junior",
+      Major: "Engineering",
+      Classes: ["ENGR 201", "MATH 202", "PHYS 302"],
+      Description: "An aspiring engineer who enjoys building things and solving real-world problems. Connect with me to discuss engineering projects!",
+      Email: "jane.smith@example.com",
+      PhoneNumber: "987-654-3210",
+      Discord: "jane_smith#5678",
+      Image: "jane-smith.jpg",
+    },
+    {
+      Name: "Jane Smith",
+      Year: "Junior",
+      Major: "Engineering",
+      Classes: ["ENGR 201", "MATH 202", "PHYS 302"],
+      Description: "An aspiring engineer who enjoys building things and solving real-world problems. Connect with me to discuss engineering projects!",
+      Email: "jane.smith@example.com",
+      PhoneNumber: "987-654-3210",
+      Discord: "jane_smith#5678",
+      Image: "jane-smith.jpg",
+    },
+    // Add more card data objects as needed
+  ]);
 
   return (
-    <TinderCard
-      swipePower={1}
-      className={`card-ex ${isFlipped ? "flipped" : ""}`}
-      onSwipe={(dir) => handleSwipe(dir)}
-      preventSwipe={['up', 'down']} // Specify which directions to prevent swiping
-      dragConstraints={{ left: 0, right: 0 }}
-      scale={0.2}
-    >
-      {isFlipped ? (
-        <div className="flipped-content">
-          <h1 className="contact">Contact-info</h1>
-          <div className="contact-body">
-            <h2 className="Email">Email: </h2>
-            <h2 className="Phone Number">Phone Number: </h2>
-            <h2 className="Discord">Discord: </h2>
+    <div className="card-ex">
+      {cardData.map((card, index) => (
+        <div key={index} className="content-left">
+          <div className="card-content">
+            <h1 className="name">Name: {card.Name}</h1>
+            <div className="image-container">
+              <img src={card.Image} alt="" />
+            </div>
+            <p>Year: {card.Year}</p>
+            <p>Major: {card.Major}</p>
+            <p>Classes: {card.Classes.join(", ")}</p>
+            <p>Description: {card.Description}</p>
           </div>
         </div>
-      ) : (
-        <div className="card-content">
-          <h1 className="name">Name</h1>
-          <div className="image-container">
-            <img src="./hero.png" alt="" />
-          </div>
-          <div className="year">
-            <h2>Year:</h2>
-          </div>
-          <div className="major">
-            <h2>Major:</h2>
-          </div>
-          <div className="classes">
-            <h2>Classes:</h2>
-          </div>
-          <div className="description">
-            <h2>Description:</h2>
-          </div>
-        </div>
-      )}
-    </TinderCard>
+      ))}
+    </div>
   );
 };
 

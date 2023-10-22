@@ -1,8 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './newprofile.scss'; // Import your CSS file
 import { Link } from 'react-router-dom';
 
 function NewProfile() {
+  const [username, setUsername] = useState('');
+  const [email , setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
+  const [major, setMajor] = useState('');
+  const [classes, setClasses] = useState('');
+  const [discord, setDiscord] = useState('');
+  const [gpa, setGpa] = useState('');
+  const [description, setDescription] = useState('');
+
+
+  const handleLogin = () => {
+    const data = {
+      Name: userName,
+      Email: userEmail,
+      Password: userPassword,
+      Major: userMajor,
+      Class: userClassesTaken,
+    }
+      // Make a fetch request to your backend using the relative URL.
+    
+  } 
+
   return (
     <div id="card-profile">
       <div id="card-content">
@@ -14,7 +37,7 @@ function NewProfile() {
           <label for="user-email">
             &nbsp;Email
           </label>
-          <input id="user-email" className="form-content" type="email" name="email" autoComplete="on" required />
+          <input id="user-email" className="form-content" type="email" name="email" autoComplete="on" required  />
           <div className="form-border"></div>
           <label for="user-password" style={{ paddingTop: '22px' }}>
             &nbsp;Password
@@ -42,10 +65,10 @@ function NewProfile() {
           <input id="user-photo" className="form-content" type="file" name="photo" />
           <div className="form-border"></div>
           {/*<input id="submit-btn" type="submit" name="submit" value="CREATE" />*/}
-
-          <Link to="/" id = "submit-btn">
+          <button type = "button" onClick = {handleLogin} id = "submit-btn">Submit</button>
+          {/* <Link to="/" id = "submit-btn">
                 Create
-          </Link>
+          </Link> */}
 
         </form>
       </div>

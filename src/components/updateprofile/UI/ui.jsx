@@ -1,22 +1,34 @@
 import React, { useState } from 'react';
 import './ui.scss';
-
+import axios from 'axios';
 const UI = () => {
+    const [username, setUsername] = useState(''); // Initialize state for username
     const [email, setEmail] = useState(''); // Initialize state for email
-    const [name, setName] = useState(''); // Initialize state for name
-    const [year, setYear] = useState(''); // Initialize state for year
+    const [names, setName] = useState(''); // Initialize state for name
     const [major, setMajor] = useState(''); // Initialize state for major
     const [classes, setClasses] = useState(''); // Initialize state for classes
+    
 
     const handleUpdate = () => {
         // Handle the update logic here
         // You can save the data to your backend or perform any necessary action
-        console.log('Updated data:');
-        console.log('Email:', email);
-        console.log('Name:', name);
-        console.log('Year:', year);
-        console.log('Major:', major);
-        console.log('Classes:', classes);
+        const dataToSend = {
+            username: email,
+            name: names,
+            major: major,
+            Classes: classes,
+        }
+        const apiUrl = 'http://localhost:3000/updateprofile'; // Replace with your actual backend endpoint URL
+        axios
+        .post(apiUrl, dataToSend)
+        .then((response) => {
+          
+          console.log("hello there")
+        })
+        .catch((error) => {
+          // Handle errors
+          console.error('Error:', error);
+        });
     };
 
     return (
@@ -25,7 +37,6 @@ const UI = () => {
                 <h1 className="title">Edit Profile</h1>
                 <div className="profile-picture-container">
                     <div className="profile-picture">
-                        <img src="hero.png" alt="Profile Picture" />
                         <div className="overlay">
                             <div className="overlay-text">Change Profile Picture</div>
                         </div>
@@ -34,7 +45,7 @@ const UI = () => {
 
                 <div className="card-descripton">
                     <div className="form-field">
-                        <label>Email:</label>
+                        <label>Username:</label>
                         <input
                             type="text"
                             value={email}
@@ -45,16 +56,8 @@ const UI = () => {
                         <label>Name:</label>
                         <input
                             type="text"
-                            value={name}
+                            value={names}
                             onChange={(e) => setName(e.target.value)}
-                        />
-                    </div>
-                    <div className="form-field">
-                        <label>Year:</label>
-                        <input
-                            type="text"
-                            value={year}
-                            onChange={(e) => setYear(e.target.value)}
                         />
                     </div>
                     <div className="form-field">
